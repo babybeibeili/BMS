@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="oracle" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+    <context id="testTables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <!-- 该配置会使生产的Mapper自动继承MyMapper -->
-            <property name="mappers" value="com.tydy.config.MyMapper" />
+            <property name="mappers" value="com.tydt.bms.common.config.MyMapper" />
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="false"/>
         </plugin>
@@ -22,7 +22,7 @@
         <!-- 数据库链接地址账号密码 -->
         <jdbcConnection
                 driverClass="com.mysql.cj.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/mrbird"
+                connectionURL="jdbc:mysql://localhost:3306/mrbird?serverTimezone=Asia/Shanghai"
                 userId="root"
                 password="root">
         </jdbcConnection>
@@ -32,7 +32,7 @@
         </javaTypeResolver>
 
         <!-- 生成Model类存放位置 -->
-        <javaModelGenerator targetPackage="com.tydt.bean" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.tydt.bms.bean" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -46,7 +46,7 @@
         <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件的代码
             type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
             type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tydt.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tydt.bms.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
