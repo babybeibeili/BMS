@@ -6,3 +6,6 @@
 Basic management system
 
 https://mrbird.cc/
+
+
+mybatis-generator:generate -e
