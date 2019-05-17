@@ -1,4 +1,4 @@
-package com.tydt.bms.bean;
+package com.tydt.bms.system.model;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -8,6 +8,8 @@ public class User {
     /**
      * 用户ID
      */
+    @Id
+    @GeneratedValue(generator = "JDBC")
     @Column(name = "USER_ID")
     private Long userId;
 
